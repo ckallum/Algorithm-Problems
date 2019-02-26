@@ -35,6 +35,9 @@ void heapify(int array[], int size, int index){
 
 }
 
+/*size-1/2 because the last level of the tree are leaf nodess. There are 2 times more
+leaf nodes than parent nodes. Therefore the position of the last parent nodes/
+the first parent nodes from right to left of the array will be at size-1/2 */
 void sort(int array[], int size){
   for (int i = (size-1)/2; i>=0; i--){
     heapify(array, size, i);
