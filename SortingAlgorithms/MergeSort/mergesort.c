@@ -29,6 +29,7 @@ void merge(int array[], int low, int mid, int high){
     }
     k++;
   }
+
   while (i < sizeleft)
     {
         array[k] = leftarray[i];
@@ -36,8 +37,6 @@ void merge(int array[], int low, int mid, int high){
         k++;
     }
 
-    /* Copy the remaining elements of R[], if there
-       are any */
   while (j < sizeright)
     {
         array[k] = rightarray[j];
