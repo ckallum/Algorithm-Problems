@@ -3,7 +3,7 @@
 #include <math.h>
 
 int main(){
-  int array[100];
+  int *array = (int*)malloc(sizeof(int));
   int arrayindex = 0;
   int max = 0;
   for (int i = 1; i<100; i++){
@@ -15,11 +15,13 @@ int main(){
     }
     if (counter>max){
       max = counter;
+      array = (int*)realloc(array, sizeof(int));
       arrayindex = 0;
       array[arrayindex] = i;
       arrayindex ++;
     }
     else if (counter==max){
+      array = (int*)realloc(array, sizeof(int)*(arrayindex+1));
       array[arrayindex] = i;
       arrayindex++;
     }
@@ -27,6 +29,10 @@ int main(){
   for (int i =0; i<arrayindex; i++){
     printf("%d\n", array[i]);
   }
-  return 0;
 
+  for(int i = 0; i < arrayindex; i++){
+    printf("%d\n", array[i]);
+  }
+  free(array);
+  return 0;
 }
