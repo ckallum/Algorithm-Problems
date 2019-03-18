@@ -1,1 +1,3 @@
-Some small and simple programs just testing out C.
+Implementing Algorithms in C
+-----------------------------
+Below are some of my implementations of some simple algorithms and programs using C.
