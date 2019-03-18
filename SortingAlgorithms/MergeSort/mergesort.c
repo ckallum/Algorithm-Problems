@@ -30,19 +30,17 @@ void merge(int array[], int low, int mid, int high){
     k++;
   }
 
-  while (i < sizeleft)
-    {
+  while (i < sizeleft){
         array[k] = leftarray[i];
         i++;
         k++;
-    }
+  }
 
-  while (j < sizeright)
-    {
+  while (j < sizeright){
         array[k] = rightarray[j];
         j++;
         k++;
-    }
+  }
 }
 
 void mergeSort(int array[], int low, int high){
