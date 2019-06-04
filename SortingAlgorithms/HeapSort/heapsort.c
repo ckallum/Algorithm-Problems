@@ -41,12 +41,20 @@ the first parent nodes from right to left of the array will be at size-1/2
 
 The first for loop build's the initial heap, the second for loop sorts the max heap
 (swaps first and last element) and calls heapify again at the new root*/
+
+/**Build initial heap->makes sure subtrees are also in heap form for ease when
+extracting root element and building again**/
 void sort(int array[], int size){
   for (int i = (size-1)/2; i>=0; i--){
     heapify(array, size, i);
   }
+  /**Extract max element from heap/priority queue->tree should be in heap form apart
+  for root element so only need to rebuild at root element(don't have to start at
+  i/2 again as only thing out of place is the root element->only have to work
+  from root as sub-heaps are already in heap form)**/
   for (int i = size-1; i>=0; i--){
-    swap(array, 0, i);
+    swap(array, 0, i);//extract max element->sort by sending to back of array/array[i].
+    //Build heap on reduced heap/array->excludes already extracted elements/sorted elements
     heapify(array, i, 0);
   }
 }
